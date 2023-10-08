@@ -1,0 +1,6 @@
+# Исключаем папку node_modules
+/node_modules/
+
+# Исключаем папки с скриншотами и видео
+/screenshots/
+/videos/
