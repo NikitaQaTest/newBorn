@@ -62,7 +62,30 @@ Cypress.Commands.add("loginByAPI", () => {
             }
         });
     });
+
+    
 });
+
+// Cypress.Commands.add("loginByAPI", () => {
+//     ApiHelper.getToken().then((token) => {
+//       cy.visit("http://5.189.186.217/analytics", {
+//         onBeforeLoad(win) {
+//           win.localStorage.setItem("auth-token", token);
+//         }
+//       });
+  
+//       // Добавляем intercept для запроса /api/analytics/overview
+//       cy.intercept(
+//         'GET',
+//         'http://5.189.186.217/api/analytics/analytics',
+//         { statusCode: 200 } // Провалидируем статус-код запроса = 200
+//       ).as('analyticsOverview');
+  
+//       // Устанавливаем максимальное время ожидания для intercept в 7 секунд
+//       cy.wait('@analyticsOverview', { timeout: 7000 });
+//     });
+//   });
+  
 
 
 

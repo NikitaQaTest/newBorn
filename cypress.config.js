@@ -1,9 +1,21 @@
 import { defineConfig} from "cypress"
+import { configurePlugin } from 'cypress-mongodb';
+
 
  export default defineConfig({
+
+  env: {
+    mongodb: {
+        uri: "mongodb://testUser:qwerty12345@5.189.186.217:27017/?authMechanism=DEFAULT",
+        database: "admin",
+    },
+},
+
   e2e: {
     setupNodeEvents(on, config) {
-      on("before:browser:launch", (browser, launchOptions) => {
+      configurePlugin(on);
+
+    on("before:browser:launch", (browser, launchOptions) => {
         if (browser.name === "chrome") {
           launchOptions.args.push("--incognito");
         }
