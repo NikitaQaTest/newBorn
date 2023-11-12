@@ -15,6 +15,18 @@ pipeline{
         stage ("Init dependensies") {
             steps {
                 sh 'npm i'
+
+                script {
+                    // Install Xvfb
+                    sh 'sudo apt-get update && sudo apt-get install -y xvfb'
+
+                    // Start Xvfb
+                    sh 'Xvfb :1 -screen 0 1024x768x24 &'
+                    sleep 3 // Give Xvfb some time to start (adjust if necessary)
+
+                    // Set the DISPLAY environment variable
+                    sh 'export DISPLAY=:1'
+                }
             }
         }
         stage ("Run tests") {
