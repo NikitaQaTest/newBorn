@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run": "npx cypress run --env email=test1@gmail.com,password=12345Qq --config baseUrl=http://5.189.186.217/"
+    "cy:run": "npx cypress run --env email=test1@gmail.com,password=12345Qq --config baseUrl=http://5.189.186.217/",
+    "cy:run:firefox": "npx cypress run --env email=test1@gmail.com,password=12345Qq --config baseUrl=http://5.189.186.217/ --browser firefox",
+    "cy:run:chrome": "npx cypress run --env email=test1@gmail.com,password=12345Qq --config baseUrl=http://5.189.186.217/ --browser chrome"
   },
   "author": "",
   "license": "ISC",
