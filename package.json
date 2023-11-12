@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "npx cypress run --env email=test1@gmail.com,password=12345Qq --config baseUrl=http://5.189.186.217/"
   },
   "author": "",
   "license": "ISC",
